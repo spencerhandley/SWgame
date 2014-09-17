@@ -11,6 +11,8 @@ var Gunner = function(){
     left:this.startPositionHor
   }
   this.$node.css(styleSettings)
+  this.score = 0;
+  var that=this;
 };
 
 Gunner.prototype.moveLeft = function(timeBetweenSteps){
@@ -20,12 +22,25 @@ Gunner.prototype.moveRight = function(timeBetweenSteps){
   this.$node[0].style.left = (parseFloat(this.$node[0].style.left) + 10).toString() + "px"
   };
 Gunner.prototype.shoot = function(timeBetweenSteps){
+
   var origin = this.$node[0].style.left;
   var bullet = new Bullet(origin);
+  window.bullets.push(bullet)
+  if(parseFloat(bullet.$node[0].style.top) <= 0 ) {
+      bullet.$node.remove()
+      var idx = window.bullets.indexOf(bullet)
+      window.bullets.splice(idx, 1)
+      console.log(window.bullets)
+      debugger;
+    }
+
   };
 Gunner.prototype.die = function(timeBetweenSteps){
 
   };
 Gunner.prototype.heal = function(timeBetweenSteps){
 
+  };
+Gunner.prototype.incrementScore = function(){
+  this.score++
   };

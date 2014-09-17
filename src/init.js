@@ -1,6 +1,36 @@
 $(document).ready(function(){
-  window.dancers = [];
+  window.enemies = [];
+  window.bullets = [];
+  window.score = 0
+  $("#currentScore").text(window.score)
   var gunner = new Gunner();
+
+  var makeTieRow = function(){
+    for(var i = 2; i<10; i++){
+      var enemy = new tieFighter(i+"00px");
+      $("body").append(enemy.$node);
+
+      window.enemies.push(enemy.$node[0]);
+    }
+  }
+  makeTieRow();
+  var tieRowInterval = setInterval(function(){makeTieRow()}, 8000)
+  $(document).on("click", ".restartButton",function(){
+    window.location.reload()
+  })
+  //   var makeStar = function(){
+
+  //     var enemy = new starDestroyer("500px");
+  //     $("body").append(enemy.$node);
+  //     window.enemies.push(enemy.$node[0]);
+
+  // }
+  // makeStar();
+  var starInterval = setInterval(function(){makeStar()}, 3000)
+  $(document).on("click", ".restartButton",function(){
+    window.location.reload()
+  })
+
   $("body").append(gunner.$node);
   $(document).keydown(function(e) {
     switch(e.which) {

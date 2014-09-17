@@ -10,7 +10,8 @@ body{
   width: 100%;
   height: 100%;
   margin: 0 auto;
-   background: url("img/backgroundStars.jpg");
+  background: url("img/backgroundStars.jpg");
+  background-size:cover;
 }
 
 .bullet {
@@ -29,48 +30,39 @@ body{
 .gunner img{
   width:75px;
 }
+.tieFighter {
+  position: absolute;
+}
+.tieFighter img {
+  width:100px;
+  position: absolute;
+}
+.starDestroyer {
+  position: absolute;
+}
+.starDestroyer img {
+  width:300px;
+  position: absolute;
+}
 body, a:link, a:visited, a:active{
   color: lightblue;
 }
-.title, .addDancerButton{
-  padding:5px 12px;
-  float:right;
-}
+
 .lineup {
   padding:5px 12px;
   float:left;
 }
 
-.stinkyDancer {
-  background: url("img/stinky.gif");
-  width:100px;
-}
-.creepyDancer {
-  background: url("img/creepy.gif");
-  width:100px;
-}
-.blinkyDancer {
-  background: url("img/winky.gif");
-  background-size : 400px;
-}
+
 .topbar{
   height:32px;
   background-color: #555;
 }
+.container {
+  margin: 0 auto;
+  width: 920px;
+  text-align: center;
+}
 .title{
 /*  background-color: #777;
 */}
-.dancer{
-  width: 280px;
-  height: 200px;
-  position:absolute;
-  -webkit-animation-duration: 0.5s;
-  -webkit-animation-name:swivel;
-  -webkit-animation-iteration-count: infinite;
-  -webkit-animation-direction:alternate;
-}
-@-webkit-keyframes swivel{
-  from {transform:rotate(30deg) }
-  to {transform:rotate(-30deg)}
-
-}
